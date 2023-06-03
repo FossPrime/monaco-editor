@@ -22,7 +22,7 @@ module.exports = {
 		runtimeChunk: "single",
 	},
 	output: {
-		path: r('dist'),
+		path: r("dist"),
 		devtoolModuleFilenameTemplate: "file:///[absolute-resource-path]",
 	},
 	resolve: {
