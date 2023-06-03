@@ -14,5 +14,6 @@
 	"git.branchProtectionPrompt": "alwaysCommitToNewBranch",
 	"git.branchRandomName.enable": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"prettier.configPath": ""
+	"prettier.configPath": "",
+	"editor.formatOnSave": true
 }
