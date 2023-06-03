@@ -146,7 +146,7 @@ function getHtml(headExtra?: string): string {
 	<head>
 	<meta charset="utf-8">
 	<title>Monaco Editor</title>
-	${headExtra}
+	${headExtra || ""}
 	</head>
 	<body>
 	</body>
