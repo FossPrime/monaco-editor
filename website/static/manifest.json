@@ -1,0 +1,53 @@
+{
+    "lang": "en-us",
+    "name": "Monaco Editor",
+    "short_name": "monaco-editor",
+    "description": "Import, export and visualize text files",
+    "scope": "/monaco-editor/",
+    "start_url": "/monaco-editor/playground.html",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/monaco-editor/9a60a3b3c5fcf6a9d2de2c28e5eaa986.svg",
+            "sizes": "512x512"
+        }
+    ],
+    "file_handlers": [
+        {
+            "action": "/monaco-editor/playground.html",
+            "accept": {
+                "text/xml": [
+                    ".json"
+                ]
+            }
+        }
+    ],
+    "protocol_handlers": [
+        {
+            "protocol": "monaco",
+            "url": "/monaco-editor/playground.html#%s"
+        }
+    ],
+    "display_override": ["window-controls-overlay"],
+    "shortcuts" : [
+        {
+          "name": "New Hello World",
+          "url": "/monaco-editor/?source=v0.38.0#example-creating-the-editor-hello-world",
+          "description": "Show Hello World example"
+        },
+        {
+          "name": "Monarch",
+          "url": "/monaco-editor/monarch.html",
+          "description": "create declarative syntax highlighters using JSON",
+          "icons": [{ "src": "/monaco-editor/monarch-34px.png", "sizes": "32x32" }]
+        }
+    ],
+    "url_handlers": [
+        {
+          "origin": "https://patrickbrosset.com"
+        }
+    ]
+}
