@@ -11,8 +11,8 @@
 	"display": "standalone",
 	"icons": [
 		{
-			"src": "/monaco-editor/9a60a3b3c5fcf6a9d2de2c28e5eaa986.svg",
-			"sizes": "512x512"
+			"src": "/monaco-editor/monarch-34px.png",
+			"sizes": "32x32"
 		}
 	],
 	"file_handlers": [
@@ -21,12 +21,6 @@
 			"accept": {
 				"text/xml": [".json"]
 			}
-		}
-	],
-	"protocol_handlers": [
-		{
-			"protocol": "monaco",
-			"url": "/monaco-editor/playground.html#%s"
 		}
 	],
 	"display_override": ["window-controls-overlay"],
@@ -39,10 +33,7 @@
 		{
 			"name": "Monarch",
 			"url": "/monaco-editor/monarch.html",
-			"description": "create declarative syntax highlighters using JSON",
-			"icons": [
-				{ "src": "/monaco-editor/monarch-34px.png", "sizes": "32x32" }
-			]
+			"description": "create declarative syntax highlighters using JSON"
 		}
 	],
 	"url_handlers": [

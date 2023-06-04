@@ -25,6 +25,12 @@
 			path: "creating-the-editor/syntax-highlighting-for-html-elements",
 		},
 		{
+			chapter: "Creating the editor",
+			name: "Editor File Handling",
+			id: "creating-the-editor-file-handlers",
+			path: "creating-the-editor/file-handlers",
+		},
+		{
 			chapter: "Interacting with the editor",
 			name: "Adding a command to an editor instance",
 			id: "interacting-with-the-editor-adding-a-command-to-an-editor-instance",
