@@ -3,10 +3,11 @@
 // You can also call editor.updateOptions at any time to change the options.
 
 if ("launchQueue" in window) {
-	window.launchQueue?.setConsumer((launchParams) => {
+	// @ts-ignore
+	window.launchQueue.setConsumer((launchParams) => {
 		if (launchParams.files && launchParams.files.length) {
 			console.log(launchParams);
-			openFiles(launchParams.files);
+			handleFiles(launchParams.files);
 		}
 	});
 }
