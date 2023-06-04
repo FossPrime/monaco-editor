@@ -3,21 +3,21 @@
 	"name": "Monaco Editor",
 	"short_name": "monaco-editor",
 	"description": "Import, export and visualize text files",
-	"scope": "/monaco-editor/",
-	"start_url": "/monaco-editor/playground.html",
+	"scope": "/",
+	"start_url": "/playground.html",
 	"background_color": "#000000",
 	"theme_color": "#000000",
 	"orientation": "any",
 	"display": "standalone",
 	"icons": [
 		{
-			"src": "/monaco-editor/9a60a3b3c5fcf6a9d2de2c28e5eaa986.svg",
+			"src": "/9a60a3b3c5fcf6a9d2de2c28e5eaa986.svg",
 			"sizes": "256x256"
 		}
 	],
 	"file_handlers": [
 		{
-			"action": "/monaco-editor/playground.html#example-creating-the-editor-file-handlers",
+			"action": "/playground.html#example-creating-the-editor-file-handlers",
 			"accept": {
 				"text/xml": [".json"]
 			}
@@ -27,12 +27,12 @@
 	"shortcuts": [
 		{
 			"name": "New Hello World",
-			"url": "/monaco-editor/?source=v0.38.0#example-creating-the-editor-hello-world",
+			"url": "/?source=v0.38.0#example-creating-the-editor-hello-world",
 			"description": "Show Hello World example"
 		},
 		{
 			"name": "Monarch",
-			"url": "/monaco-editor/monarch.html",
+			"url": "/monarch.html",
 			"description": "create declarative syntax highlighters using JSON"
 		}
 	]

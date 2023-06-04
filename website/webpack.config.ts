@@ -10,6 +10,7 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import * as CopyPlugin from "copy-webpack-plugin";
 
+const isDevelopment = process.env.NODE_ENV !== "production";
 const r = (file: string) => path.resolve(__dirname, file);
 
 module.exports = {
@@ -89,7 +90,9 @@ module.exports = {
 			chunks: ["index"],
 			filename: "playground.html",
 			templateContent: getHtml(
-				'<link rel="manifest" href="manifest.json">'
+				isDevelopment
+					? '<link rel="manifest" href="manifest-dev.json">'
+					: '<link rel="manifest" href="manifest.json">'
 			),
 		}),
 		new HtmlWebpackPlugin({

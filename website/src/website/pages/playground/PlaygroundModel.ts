@@ -443,7 +443,35 @@ class StateUrlSerializer implements IHistoryModel {
 			this._sourceOverride = source;
 		}
 
-		if (!hashValue) {
+		const fileHandlerName = hashValue?.substring("example-".length);
+		if (
+			"launchQueue" in window &&
+			hashValue &&
+			hashValue.endsWith("creating-the-editor-file-handlers")
+		) {
+			// @ts-ignore
+			window.launchQueue.setConsumer(async (launchParams) => {
+				const example = getPlaygroundExamples()
+					.flatMap((e) => e.examples)
+					.find((e) => e.id === fileHandlerName);
+				this.model.selectedExample = example;
+				if (launchParams.files && launchParams.files.length) {
+					console.log(launchParams);
+					const file = launchParams.files[0];
+					const blob = await file.getFile();
+					blob.handle = file;
+					const state = await (example as any).load();
+					this.cachedState = {
+						state: {
+							...state,
+							html: state.html + (await blob.text()) + "</pre>\n",
+						},
+						hash: hashValue,
+					};
+					this.model.setState(this.cachedState.state);
+				}
+			});
+		} else if (!hashValue) {
 			this.model.selectedExample = getPlaygroundExamples()[0].examples[0];
 		} else if (hashValue.startsWith("example-")) {
 			const exampleName = hashValue.substring("example-".length);

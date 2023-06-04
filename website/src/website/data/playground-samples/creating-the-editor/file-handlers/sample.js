@@ -1,36 +1,36 @@
-// Through the options literal, the behaviour of the editor can be easily customized.
-// Here are a few examples of config options that can be passed to the editor.
-// You can also call editor.updateOptions at any time to change the options.
+customElements.define(
+	"code-view-monaco",
+	class CodeViewMonaco extends HTMLElement {
+		_monacoEditor;
+		/** @type HTMLElement */
+		_editor;
 
-if ("launchQueue" in window) {
-	// @ts-ignore
-	window.launchQueue.setConsumer((launchParams) => {
-		if (launchParams.files && launchParams.files.length) {
-			console.log(launchParams);
-			handleFiles(launchParams.files);
-		}
-	});
-}
+		constructor() {
+			super();
 
-async function handleFiles(files) {
-	for (const file of files) {
-		const blob = await file.getFile();
-		blob.handle = file;
-		const text = await blob.text();
+			const shadowRoot = this.attachShadow({ mode: "open" });
 
-		console.log(`${file.name} handled, content: ${text}`);
-		const editor = monaco.editor.create(
-			document.getElementById("container"),
-			{
-				value: text,
-				language: "javascript",
-
-				lineNumbers: "off",
-				roundedSelection: false,
-				scrollBeyondLastLine: false,
-				readOnly: false,
-				theme: "vs-dark",
+			// Copy over editor styles
+			const styles = document.querySelectorAll(
+				"link[rel='stylesheet'][data-name^='vs/']"
+			);
+			for (const style of styles) {
+				shadowRoot.appendChild(style.cloneNode(true));
 			}
-		);
+
+			const template = /** @type HTMLTemplateElement */ (
+				document.getElementById("editor-template")
+			);
+			shadowRoot.appendChild(template.content.cloneNode(true));
+
+			this._editor = shadowRoot.querySelector("#container");
+			const rawText = document.body.querySelector("#raw-text");
+			debugger;
+			this._monacoEditor = monaco.editor.create(this._editor, {
+				automaticLayout: true,
+				language: "html",
+				value: rawText.textContent,
+			});
+		}
 	}
-}
+);
